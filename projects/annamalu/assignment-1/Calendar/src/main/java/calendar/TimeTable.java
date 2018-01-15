@@ -154,7 +154,7 @@ public class TimeTable {
 	                if (recurDays.length == 0) {
 	                    //Add 7 days and return that by default
 	                    nextDay.add(nextDay.DAY_OF_MONTH, 7);
-	                    return nextDay;
+	                    return day;
 	                }
 	                
 	                //The user did specify weekly recurrence, so increment the
