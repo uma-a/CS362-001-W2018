@@ -43,7 +43,7 @@ public class TimeTable {
 	        
 	        //Create the first CalDay object with the starting date and add to list
 	        GregorianCalendar nextDay = (GregorianCalendar) firstDay.clone();
-	        while (nextDay.before(lastDay)) {
+	        while (nextDay.before(firstDay)) {
 
 	            calDays.add(new CalDay(nextDay));
 	            nextDay.add(nextDay.DAY_OF_MONTH, 1);
