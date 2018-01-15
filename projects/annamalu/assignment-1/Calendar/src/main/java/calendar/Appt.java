@@ -169,7 +169,7 @@ public class Appt implements  Comparable<Appt>{
     
     /** Sets description */
     public void setDescription(String description) {
-        if (description == null)
+        if (description != null)
             this.description = "";
         else
             this.description = description;
