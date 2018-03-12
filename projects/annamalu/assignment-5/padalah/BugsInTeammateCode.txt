@@ -1,0 +1,31 @@
+Bug Report 
+
+Bug #1: Bug in addAppt() Method
+
+Symptom: All appointments are not being added in proper order by start hour since the for loop skips over the first appointment in the linked list. This means the first appointment is not being accounted for and the appointment times do not appear in chronological order by hour. 
+
+Cause: This bug is caused by the fact that the for loop in the addAppt method begins at i=1 instead of i=0. 
+
+How to Reproduce Bug: This bug can be reproduced by adding at least two appointment objects using the addAppt method. Adding only one will not show the issue of the order of the appointments being incorrect. After calling the addAppt method on the desired appointments, observing the contents of each spot within the linked list will reveal that appointments are not in the correct places. 
+
+Version of Software: I detected this bug on the current, most updated version of the software. 
+
+Estimated Severity: This bug has moderate severity. It is not impacting too many other areas of the code because most appointments are still being added. However, it is still causing the order of the appointments to be wrong and should be addressed to make development and testing easier in the long run. Having the appointments in the correct order will be beneficial from the user and developer's perspective. 
+
+Estimated Priority: This bug has moderate priority. It should be fixed in a timely manner but the main issue it causes is that the order of the appointments in the list is incorrect. This should not greatly affect the user's experience because ultimately, they can still receive all the data they had hoped for. However, a user will expect to see their appointments listed in order by time and, therefore, this bug must be fixed. 
+
+
+
+Bug #2: Bug in isValid() Method
+
+Symptom: Any appointment with a start day after the 28th has its valid boolean variable set to false even if it is a valid day. This makes it so other functionality that involves manipulation of the appointments will not be carried out in these specific instances.  
+
+Cause: This bug was caused by incorrect boundaries in the isValid method. For the number of days, the conditions are set to put any appointment with a start day less than zero or greater than 28 to be invalid. However, every month, besides February has days until the 31st at most. 
+
+How to Reproduce Bug: To reproduce this bug, create an appointment object that has the start day greater than or equal to 29. Then, test its validity using the getValid method from the Appt class. Based on the boundaries of the if statement in the isValid method, this appointment will automatically be considered invalid by the getValid method and will not be able to be further manipulated in other methods or classes. 
+
+Version of Software: I detected this bug on the current, most updated version of the software. 
+
+Estimated Severity: This bug has moderately low severity. Ultimately, testing and development can continue as it normally does as long as the appointment objects being tested have start days between 1 and 28. This bug is highly severe for any appointment with a start day above 28 because none of its other dependencies can be carried out since the appointment will be considered invalid. Ultimately it should be addressed to ensure maximum reliability of the software. 
+
+Estimated Priority: This bug has moderate priority. It is important this is fixed in a timely manner because we cannot predict what days of the month a user will have more appointments. If they have any appointments on the 29th or later, they will not be displayed on their calendar which greatly hurts the user experience. Though testing and development can still be carried out relatively normally with this bug in place, it should be fixed.  
